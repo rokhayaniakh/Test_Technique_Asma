@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Détail Post</h1>
+
+  <a href="#" routerLink="/accueil" class="btn btn-primary">Back</a>
+
+  <div>
+    <strong>ID:</strong>
+    <p>{{ post?.id }}</p>
+  </div>
+  <div>
+    <strong>Auteur:</strong>
+    <ng-container *ngFor="let auteur of listauteur">
+      <p *ngIf="post?.userId == auteur.id">{{ auteur?.name }}</p>
+    </ng-container>
+  </div>
+  <div>
+    <strong>Title:</strong>
+    <p>{{ post?.title }}</p>
+  </div>
+
+  <div>
+    <strong>Contenu du Post:</strong>
+    <p>{{ post?.body }}</p>
+  </div>
+</div>
